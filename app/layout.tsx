@@ -29,7 +29,12 @@ export default function RootLayout({
       lang="en"
       className={`${cormorant.variable} ${manrope.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body
+        className="min-h-full flex flex-col bg-primary-100 
+      bg-[radial-gradient(rgba(197,197,195,0.7)_2px,transparent_2px)] bg-size-[40px_40px] text-foreground"
+      >
+        {children}
+      </body>
     </html>
   );
 }

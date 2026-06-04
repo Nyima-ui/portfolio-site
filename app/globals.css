@@ -7,8 +7,8 @@ body {
 @theme inline {
   --font-cormorant: var(--font-cormorant);
 
-  --background: #d9d9d7;
-  --foreground: #0d0d0b;
+  --color-background: #d9d9d7;
+  --color-foreground: #0d0d0b;
 
   --color-primary: #3f3f37;
   --color-primary-100: #d9d9d7;
@@ -20,6 +20,8 @@ body {
   --color-primary-700: #191916;
   --color-primary-800: #0d0d0b;
   --color-primary-900: #060606;
+
+  --color-accent: #d6d6b1;
 }
 
 /* :root {
