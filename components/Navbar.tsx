@@ -51,7 +51,7 @@ const Navbar = () => {
           Ten Nyima
         </Link>
 
-        <div className="flex gap-7 tracking-wide max-sm:gap-5 text-sm">
+        <div className="flex gap-7 tracking-wide max-sm:gap-5 text-sm pt-1">
           <NavLink href="#" label="Projects" />
           <NavLink href="#" label="About" />
         </div>
