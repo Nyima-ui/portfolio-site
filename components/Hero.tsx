@@ -26,7 +26,7 @@ const Hero = () => {
       );
   }, []);
   return (
-    <section className="relative z-10 px-36 max-lg:px-16.5 max-md:px-8 max-sm:px-5">
+    <section className="relative z-10 px-36 max-xl:px-28 max-lg:px-16.5 max-md:px-8 max-sm:px-5">
       <div className="mx-auto flex justify-between items-center py-31.5 max-sm:py-12 gap-12 max-sm:flex-col-reverse">
         <div>
           <div className="overflow-hidden">
