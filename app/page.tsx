@@ -35,7 +35,7 @@ export default function Home() {
         <Hero />
       </div>
 
-      <div className="px-36 max-xl:px-28 max-lg:px-16.5 max-md:px-8 max-sm:px-5 relative z-10">
+      <div className="px-36 max-xl:px-22 max-lg:px-14 max-md:px-8 max-sm:px-5 relative z-10">
         <Projects />
       </div>
     </main>

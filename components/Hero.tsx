@@ -2,8 +2,8 @@
 import { ArrowUpRight } from "lucide-react";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { gsap } from "gsap";
+import AnimatedLink from "./AnimatedLink";
 
 const Hero = () => {
   const headingRef = useRef<HTMLInputElement>(null);
@@ -25,8 +25,9 @@ const Hero = () => {
         "-=1.2",
       );
   }, []);
+
   return (
-    <section className="relative z-10 px-36 max-xl:px-28 max-lg:px-16.5 max-md:px-8 max-sm:px-5">
+    <section className="relative z-10 px-36 max-xl:px-22 max-lg:px-14 max-md:px-8 max-sm:px-5">
       <div className="mx-auto flex justify-between items-center py-31.5 max-sm:py-12 gap-12 max-sm:flex-col-reverse">
         <div>
           <div className="overflow-hidden">
@@ -44,16 +45,12 @@ const Hero = () => {
             </p>
           </div>
 
-          <Link
+          <AnimatedLink
             ref={buttonRef}
-            href={"#"}
-            className="ml-4 mt-5 bg-primary-500 rounded-[25px] flex pl-6 pr-5.5 py-3 justify-between gap-1 text-primary-100 items-center uppercase font-semibold max-md:ml-2.5 max-sm:mx-auto w-fit"
-          >
-            <span>Contact</span>
-            <span>
-              <ArrowUpRight strokeWidth={2} size={19} />
-            </span>
-          </Link>
+            href="#"
+            label="contact"
+            className="mt-5 ml-4 max-sm:mx-auto"
+          />
         </div>
 
         <div className="overflow-hidden" ref={imageRef}>
