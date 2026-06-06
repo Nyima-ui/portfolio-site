@@ -12,18 +12,22 @@ const Hero = () => {
   const imageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const tl = gsap.timeline({
-      defaults: { ease: "power3.out", duration: 0.9 },
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        defaults: { ease: "power3.out", duration: 0.9 },
+      });
+
+      tl.from(headingRef.current, { y: "100%", duration: 1 })
+        .from(paraRef.current, { y: "100%", duration: 0.8 }, "-=0.6")
+        .from(buttonRef.current, { opacity: 0, y: 10, duration: 0.6 }, "-=0.6")
+        .from(
+          imageRef.current,
+          { clipPath: "inset(0 0 100% 0)", duration: 1.1 },
+          "-=1.2",
+        );
     });
 
-    tl.from(headingRef.current, { y: "100%", duration: 1 })
-      .from(paraRef.current, { y: "100%", duration: 0.8 }, "-=0.6")
-      .from(buttonRef.current, { opacity: 0, y: 10, duration: 0.6 }, "-=0.6")
-      .from(
-        imageRef.current,
-        { clipPath: "inset(0 0 100% 0)", duration: 1.1 },
-        "-=1.2",
-      );
+    return () => ctx.revert();
   }, []);
 
   return (

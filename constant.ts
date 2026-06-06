@@ -1,4 +1,4 @@
-export const projects = [
+export const projects: ProjectInterface[] = [
   {
     id: 1,
     image: "/dogoear-cover.png",
@@ -6,7 +6,7 @@ export const projects = [
     paragraph:
       "Simple book tracking with an AI that actually knows your taste.",
     stack: ["Next.js", "MongoDB", "Vapi AI", "Nomic Embed"],
-    link: "#",
+    link: "/work/dogear",
   },
   {
     id: 2,
@@ -14,7 +14,7 @@ export const projects = [
     heading: "RentLocals",
     paragraph: "Rent what you need. From someone down the street.",
     stack: ["Next.js", "Supabase", "shadcn/ui", "Tailwind CSS"],
-    link: "#",
+    link: "/work/rentlocals",
   },
   {
     id: 3,
