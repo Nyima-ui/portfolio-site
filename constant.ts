@@ -34,3 +34,16 @@ export const projects: ProjectInterface[] = [
     link: "#",
   },
 ];
+
+export const skills: { src: string; label: string }[] = [
+  { src: "/skills/html.svg", label: "HTML" },
+  { src: "/skills/css.svg", label: "CSS" },
+  { src: "/skills/javascript.svg", label: "Javascript" },
+  { src: "/skills/typescript.svg", label: "Typescript" },
+  { src: "/skills/mongo.svg", label: "Mongo DB" },
+  { src: "/skills/react.svg", label: "React.js" },
+  { src: "/skills/next.svg", label: "Next.js" },
+  { src: "/skills/supabase.svg", label: "Supabase" },
+  { src: "/skills/github.svg", label: "GitHub" },
+  { src: "/skills/tailwind.svg", label: "Tailwind CSS" },
+];

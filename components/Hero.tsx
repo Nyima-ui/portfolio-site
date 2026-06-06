@@ -65,6 +65,7 @@ const Hero = () => {
               src={"/Me.png"}
               alt="Portrait of Tenzin Nyima"
               loading="eager"
+              priority
             />
           </div>
         </div>
