@@ -33,8 +33,7 @@ const Skill = () => {
       stagger: 0.08,
       scrollTrigger: {
         trigger: listRef.current,
-        start: "top 88%",
-        markers: true,
+        start: "top 88%"
       },
     });
 

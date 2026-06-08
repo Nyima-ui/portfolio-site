@@ -1,3 +1,4 @@
+import AboutMe from "@/components/AboutMe";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
@@ -39,6 +40,7 @@ export default function Home() {
       <div className="px-36 max-xl:px-22 max-lg:px-14 max-md:px-8 max-sm:px-5 relative z-10">
         <Projects />
         <Skill />
+        <AboutMe />
       </div>
     </main>
   );
