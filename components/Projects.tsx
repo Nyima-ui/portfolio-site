@@ -4,10 +4,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { projects } from "@/constant";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const ProjectCard = ({ p }: { p: ProjectInterface }) => {
   const cardRef = useRef<HTMLLIElement>(null);
@@ -93,12 +90,20 @@ const Projects = () => {
 
   useEffect(() => {
     if (!headingRef.current) return;
+    if (sessionStorage.getItem("projectsHeadingAnimated")) return;
 
-    gsap.from(headingRef.current, {
-      y: 60,
-      duration: 0.5,
-      ease: "power3.out",
+    const ctx = gsap.context(() => {
+      gsap.from(headingRef.current, {
+        y: 60,
+        duration: 0.5,
+        ease: "power3.out",
+        delay: 1.4,
+        onComplete: () =>
+          sessionStorage.setItem("projectsHeadingAnimated", "true"),
+      });
     });
+
+    return () => ctx.revert();
   }, []);
   return (
     <section className="py-12">
