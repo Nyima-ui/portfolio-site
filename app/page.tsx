@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
 import Skill from "@/components/Skill";
 import Image from "next/image";
+import Cta from "@/components/Cta";
 
 export default function Home() {
   return (
@@ -42,6 +43,7 @@ export default function Home() {
         <Skill />
         <AboutMe />
       </div>
+      <Cta />
     </main>
   );
 }

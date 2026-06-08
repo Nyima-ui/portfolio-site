@@ -76,14 +76,14 @@ const AnimatedLink = ({ ref, href, label, className }: AnimatedLinkProps) => {
     <Link
       href={href}
       className={cn(
-        `border px-6 py-3 rounded-3xl bg-primary-500 text-primary-100 flex gap-1 items-center w-fit`,
+        `border px-6 py-3 rounded-3xl bg-primary-500 text-primary-100 flex gap-1 items-center w-fit uppercase`,
         className,
       )}
       ref={ref}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="relative uppercase font-semibold overflow-hidden tracking-wide">
+      <div className="relative font-semibold overflow-hidden tracking-wide">
         <span className="block" ref={topText}>
           {label}
         </span>

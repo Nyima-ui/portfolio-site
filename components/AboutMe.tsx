@@ -7,6 +7,7 @@ import Link from "next/link";
 
 const AboutMe = () => {
   const heading = useRef<HTMLHeadingElement>(null);
+  const paraContainer = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = heading.current;
@@ -24,6 +25,21 @@ const AboutMe = () => {
       });
     });
 
+    const items = gsap.utils.toArray<HTMLParagraphElement>(
+      paraContainer.current!.querySelectorAll("p"),
+    );
+
+    gsap.from(items, {
+      y: 30,
+      opacity: 0,
+      ease: "power3.out",
+      stagger: 0.08,
+      scrollTrigger: {
+        trigger: paraContainer.current,
+        start: "top 88%",
+      },
+    });
+
     return () => ctx.revert();
   }, []);
   return (
@@ -33,7 +49,10 @@ const AboutMe = () => {
       </h2>
 
       <div className="flex gap-25 mt-12 items-start max-lg:flex-col max-lg:gap-10">
-        <div className="max-w-147.25 space-y-3 leading-relaxed max-lg:max-w-none">
+        <div
+          className="max-w-147.25 space-y-3 leading-relaxed max-lg:max-w-none"
+          ref={paraContainer}
+        >
           <p>Hey, I'm Tenzin Nyima. Everyone calls me Nyima.</p>
           <p>
             I'm a self-taught full stack developer with a year and a half of
@@ -55,10 +74,7 @@ const AboutMe = () => {
           </p>
         </div>
 
-        <div
-          className="rounded-3xl grow border border-white/80 backdrop-blur-[2px] bg-linear-to-b from-primary-100/10 to-primary-100 min-w-81.5 max-lg:w-full"
-          aria-hidden="true"
-        >
+        <div className="rounded-3xl grow border border-white/80 backdrop-blur-[2px] bg-linear-to-b from-primary-100/10 to-primary-100 min-w-81.5 max-lg:w-full">
           <Image
             width={291}
             height={291}
