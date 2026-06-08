@@ -47,3 +47,31 @@ export const skills: { src: string; label: string }[] = [
   { src: "/skills/github.svg", label: "GitHub" },
   { src: "/skills/tailwind.svg", label: "Tailwind CSS" },
 ];
+
+export const socials: { icon: string; label: string; href: string }[] = [
+  {
+    icon: "/socials/github.svg",
+    label: "GitHub",
+    href: "#",
+  },
+  {
+    icon: "/socials/linkedin.svg",
+    label: "LinkedIn",
+    href: "#",
+  },
+  {
+    icon: "/socials/instagram.svg",
+    label: "Instagram",
+    href: "#",
+  },
+  {
+    icon: "/socials/x.svg",
+    label: "X (Twitter)",
+    href: "#",
+  },
+  {
+    icon: "/socials/gmail.svg",
+    label: "Email",
+    href: "#",
+  },
+];

@@ -16,7 +16,7 @@ const Cta = () => {
         ease: "power3.out",
         scrollTrigger: {
           trigger: heading.current,
-          start: "top 88%",
+          start: "top 95%",
         },
       });
       gsap.from(buttonRef.current, {
@@ -27,7 +27,7 @@ const Cta = () => {
         delay: 0.4,
         scrollTrigger: {
           trigger: heading.current,
-          start: "top 88%",
+          start: "top 95%",
         },
       });
     });

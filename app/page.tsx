@@ -5,6 +5,7 @@ import Projects from "@/components/Projects";
 import Skill from "@/components/Skill";
 import Image from "next/image";
 import Cta from "@/components/Cta";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -44,6 +45,7 @@ export default function Home() {
         <AboutMe />
       </div>
       <Cta />
+      <Footer />
     </main>
   );
 }
