@@ -12,7 +12,7 @@ const Cta = () => {
       gsap.from(heading.current, {
         y: 20,
         opacity: 0,
-        duration: 0.7,
+        duration: 0.5,
         ease: "power3.out",
         scrollTrigger: {
           trigger: heading.current,
@@ -24,7 +24,7 @@ const Cta = () => {
         opacity: 0,
         duration: 0.7,
         ease: "power3.out",
-        delay: 0.4,
+        delay: 0.3,
         scrollTrigger: {
           trigger: heading.current,
           start: "top 95%",

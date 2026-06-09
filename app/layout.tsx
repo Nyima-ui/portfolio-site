@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import GsapProvider from "@/components/GsapProvider";
+import Navbar from "@/components/Navbar";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -34,7 +35,10 @@ export default function RootLayout({
         className="min-h-full flex flex-col bg-primary-100 
       bg-[radial-gradient(rgba(197,197,195,0.7)_2px,transparent_2px)] bg-size-[40px_40px] text-foreground"
       >
-        <GsapProvider>{children}</GsapProvider>
+        <GsapProvider>
+          <Navbar />
+          {children}
+        </GsapProvider>
       </body>
     </html>
   );

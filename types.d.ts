@@ -6,3 +6,9 @@ interface ProjectInterface {
   stack: string[];
   link: string;
 }
+
+interface ProjectHeroProps {
+  title: string;
+  description: string;
+  image: string;
+}

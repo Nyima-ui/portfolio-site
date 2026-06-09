@@ -23,21 +23,20 @@ const AboutMe = () => {
           start: "top 98%",
         },
       });
-    });
+      const items = gsap.utils.toArray<HTMLParagraphElement>(
+        paraContainer.current!.querySelectorAll("p"),
+      );
 
-    const items = gsap.utils.toArray<HTMLParagraphElement>(
-      paraContainer.current!.querySelectorAll("p"),
-    );
-
-    gsap.from(items, {
-      y: 30,
-      opacity: 0,
-      ease: "power3.out",
-      stagger: 0.08,
-      scrollTrigger: {
-        trigger: paraContainer.current,
-        start: "top 88%",
-      },
+      gsap.from(items, {
+        y: 30,
+        opacity: 0,
+        ease: "power3.out",
+        stagger: 0.08,
+        scrollTrigger: {
+          trigger: paraContainer.current,
+          start: "top 88%",
+        },
+      });
     });
 
     return () => ctx.revert();

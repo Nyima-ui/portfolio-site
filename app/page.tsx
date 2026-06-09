@@ -35,7 +35,7 @@ export default function Home() {
           loading="eager"
           priority
         />
-        <Navbar />
+
         <Hero />
       </div>
 

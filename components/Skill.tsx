@@ -19,22 +19,21 @@ const Skill = () => {
           start: "top 94%",
         },
       });
-    });
 
-    const items = gsap.utils.toArray<HTMLLIElement>(
-      listRef.current!.querySelectorAll("li"),
-    );
-
-    gsap.from(items, {
-      y: 40,
-      opacity: 0,
-      duration: 0.6,
-      ease: "power3.out",
-      stagger: 0.08,
-      scrollTrigger: {
-        trigger: listRef.current,
-        start: "top 88%"
-      },
+      const items = gsap.utils.toArray<HTMLLIElement>(
+        listRef.current!.querySelectorAll("li"),
+      );
+      gsap.from(items, {
+        y: 40,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        stagger: 0.08,
+        scrollTrigger: {
+          trigger: listRef.current,
+          start: "top 88%",
+        },
+      });
     });
 
     return () => ctx.revert();
