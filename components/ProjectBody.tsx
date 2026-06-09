@@ -1,14 +1,8 @@
+"use client";
 import Image from "next/image";
 import AnimatedLink from "./AnimatedLink";
-
-interface ProjectBodyProps {
-  github: string;
-  liveDemo: string;
-  problem: string[];
-  solution: string[];
-  broadImage: string;
-  verticalImage: string;
-}
+import { gsap } from "gsap";
+import { useEffect, useRef } from "react";
 
 const ProjectBody = ({
   github,
@@ -18,10 +12,43 @@ const ProjectBody = ({
   broadImage,
   verticalImage,
 }: ProjectBodyProps) => {
+  const links = useRef<HTMLUListElement>(null);
+  const description = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const items = gsap.utils.toArray(links.current!.querySelectorAll("li"));
+
+    const ctx = gsap.context(() => {
+      gsap.from(items, {
+        y: 30,
+        opacity: 0,
+        duration: 0.9,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: links.current,
+          start: "top 92%",
+        },
+      });
+
+      gsap.from(description.current, {
+        y: 30,
+        opacity: 0,
+        duration: 0.9,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: links.current,
+          start: "top 92%",
+        },
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section className="py-12 max-xl:flex-col">
       <div className="flex justify-between gap-3 max-xl:flex-col-reverse max-xl:gap-6">
-        <ul className="space-y-3 w-fit">
+        <ul className="space-y-3 w-fit" ref={links}>
           <li>
             <AnimatedLink
               href={github}
@@ -38,7 +65,7 @@ const ProjectBody = ({
           </li>
         </ul>
 
-        <div className="max-w-205">
+        <div className="max-w-205" ref={description}>
           <h2 className="text-[31px]">The problem</h2>
           <div className="mt-2 space-y-1">
             {problem.map((p, i) => (

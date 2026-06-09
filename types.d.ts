@@ -13,3 +13,12 @@ interface ProjectHeroProps {
   description: string;
   image: string;
 }
+
+interface ProjectBodyProps {
+  github: string;
+  liveDemo: string;
+  problem: string[];
+  solution: string[];
+  broadImage: string;
+  verticalImage: string;
+}
