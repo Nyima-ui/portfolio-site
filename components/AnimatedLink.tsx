@@ -75,6 +75,7 @@ const AnimatedLink = ({ ref, href, label, className }: AnimatedLinkProps) => {
   return (
     <Link
       href={href}
+      target="_blank"
       className={cn(
         `border px-6 py-3 rounded-3xl bg-primary-500 text-primary-100 flex gap-1 items-center w-fit uppercase`,
         className,

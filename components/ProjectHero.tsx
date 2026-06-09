@@ -20,7 +20,7 @@ const ProjectHero = ({ id, title, description, image }: ProjectHeroProps) => {
   }, []);
   return (
     <section
-      className="px-36 max-xl:px-22 max-lg:px-14 max-md:px-8 max-sm:px-5 py-12"
+      className="py-12"
       aria-labelledby="project-title"
     >
       <h1
@@ -45,7 +45,6 @@ const ProjectHero = ({ id, title, description, image }: ProjectHeroProps) => {
           src={image}
           alt={title}
           className="h-full w-full object-cover"
-          loading="eager"
           priority
         />
       </div>
