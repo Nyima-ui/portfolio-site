@@ -5,6 +5,7 @@ const DogearPage = () => {
   return (
     <main>
       <ProjectHero
+        id="1"
         title="Dogear"
         description="Simple book tracking with an AI that actually knows your taste."
         image="/projects/dogear-hero.png"

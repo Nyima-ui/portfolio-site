@@ -22,7 +22,7 @@ const Hero = () => {
         .from(buttonRef.current, { opacity: 0, y: 10, duration: 0.6 }, "-=0.6")
         .from(
           imageRef.current,
-          { clipPath: "inset(0 0 100% 0)", duration: 1.1 },
+          { clipPath: "inset(0 0 100% 0)", duration: 0.7 },
           "-=1.2",
         );
     });

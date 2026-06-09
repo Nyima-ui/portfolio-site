@@ -8,6 +8,7 @@ interface ProjectInterface {
 }
 
 interface ProjectHeroProps {
+  id: string;
   title: string;
   description: string;
   image: string;

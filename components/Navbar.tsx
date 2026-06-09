@@ -47,7 +47,7 @@ const Navbar = () => {
   return (
     <header className="relative z-10 text-primary-900">
       <nav className="flex justify-between px-10 pt-2 py-4 max-sm:px-5 items-center">
-        <Link href={"#"} className="select-none font-cormorant text-xl">
+        <Link href={"/"} className="select-none font-cormorant text-xl">
           Ten Nyima
         </Link>
 
