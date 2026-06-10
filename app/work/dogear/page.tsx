@@ -1,5 +1,6 @@
 import ProjectBody from "@/components/ProjectBody";
 import ProjectHero from "@/components/ProjectHero";
+import TechStack from "@/components/TechStack";
 import React from "react";
 
 const DogearPage = () => {
@@ -25,6 +26,17 @@ const DogearPage = () => {
         ]}
         broadImage="/projects/dogear-broad.png"
         verticalImage="/projects/dogear-vertical.png"
+      />
+      <TechStack
+        stack={[
+          "Next.js",
+          "Tailwind CSS",
+          "MongoDB",
+          "Vapi AI",
+          "Vercel Storage",
+          "Nomic Embed",
+          "ElevenLabs",
+        ]}
       />
     </main>
   );

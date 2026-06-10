@@ -47,25 +47,25 @@ const ProjectBody = ({
 
   return (
     <section className="py-12 max-xl:flex-col">
-      <div className="flex justify-between gap-3 max-xl:flex-col-reverse max-xl:gap-6">
+      <div className="flex justify-between gap-2 max-xl:flex-col-reverse max-xl:gap-6">
         <ul className="space-y-3 w-fit" ref={links}>
           <li>
             <AnimatedLink
               href={github}
               label="GitHub"
-              className="bg-transparent text-foreground px-5 py-2.5 normal-case w-full justify-between"
+              className="bg-transparent text-foreground px-5 py-2.5 normal-case w-full justify-between text-sm"
             />
           </li>
           <li>
             <AnimatedLink
               href={liveDemo}
               label="View live demo"
-              className="px-5 py-2.5 normal-case text-nowrap"
+              className="px-5 py-2.5 normal-case text-nowrap text-sm"
             />
           </li>
         </ul>
 
-        <div className="max-w-205" ref={description}>
+        <div className="max-w-205 shrink-0" ref={description}>
           <h2 className="text-[31px]">The problem</h2>
           <div className="mt-2 space-y-1">
             {problem.map((p, i) => (
@@ -85,13 +85,13 @@ const ProjectBody = ({
         </div>
       </div>
 
-      <div className="flex gap-7 mt-9 items-start max-lg:flex-col">
+      <div className="flex justify-between mt-9 items-start max-lg:flex-col max-lg:gap-7 max-w-205 ml-auto max-xl:max-w-none max-xl:justify-normal max-xl:gap-8">
         <Image
           width={484}
           height={317}
           src={broadImage}
           alt={"Project screenshot."}
-          className="rounded-xl shadow-xl ml-auto max-xl:ml-0 max-lg:w-full"
+          className="rounded-xl shadow-xl ml-auo max-xl:ml-0 max-lg:w-full"
         />
 
         <Image

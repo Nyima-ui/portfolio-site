@@ -5,6 +5,7 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import AnimatedLink from "./AnimatedLink";
 
+let hasAnimated = false;
 const Hero = () => {
   const headingRef = useRef<HTMLInputElement>(null);
   const paraRef = useRef<HTMLParagraphElement>(null);
@@ -12,9 +13,28 @@ const Hero = () => {
   const imageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (hasAnimated) {
+      gsap.set(
+        [
+          headingRef.current,
+          paraRef.current,
+          buttonRef.current,
+          imageRef.current,
+        ],
+        {
+          clearProps: "true",
+        },
+      );
+
+      return;
+    }
+
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         defaults: { ease: "power3.out", duration: 0.9 },
+        onComplete: () => {
+          hasAnimated = true;
+        },
       });
 
       tl.from(headingRef.current, { y: "100%", opacity: 0, duration: 1.2 })
