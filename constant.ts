@@ -52,26 +52,26 @@ export const socials: { icon: string; label: string; href: string }[] = [
   {
     icon: "/socials/github.svg",
     label: "GitHub",
-    href: "#",
+    href: "https://github.com/Nyima-ui",
   },
   {
     icon: "/socials/linkedin.svg",
     label: "LinkedIn",
-    href: "#",
+    href: "https://www.linkedin.com/in/tenzin-nyima-897761365/",
   },
   {
     icon: "/socials/instagram.svg",
     label: "Instagram",
-    href: "#",
+    href: "https://www.instagram.com/nyima_kun/",
   },
   {
     icon: "/socials/x.svg",
     label: "X (Twitter)",
-    href: "#",
+    href: "https://x.com/T10b15",
   },
   {
     icon: "/socials/gmail.svg",
     label: "Email",
-    href: "#",
+    href: "mailto:ntenzin492@gmail.com",
   },
 ];

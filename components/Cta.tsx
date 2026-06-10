@@ -41,7 +41,7 @@ const Cta = () => {
         Got a project in mind? I'd love to hear it.
       </h3>
       <AnimatedLink
-        href={"#"}
+        href={"mailto:ntenzin492@gmail.com"}
         label="Let's Talk"
         className="mx-auto normal-case px-5 py-2.5"
         ref={buttonRef}

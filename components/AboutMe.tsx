@@ -42,7 +42,7 @@ const AboutMe = () => {
     return () => ctx.revert();
   }, []);
   return (
-    <section className="py-12">
+    <section className="py-12" id="about">
       <h2 className="text-[31px] text-center" ref={heading}>
         About me
       </h2>
@@ -84,6 +84,10 @@ const AboutMe = () => {
 
           <Link
             href={"#"}
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
             className="rounded-full bg-[#E2E2C8] py-2 px-4 flex gap-1 ml-auto text-foreground items-center w-fit"
           >
             <ArrowUp01 size={16} strokeWidth={1.7} />

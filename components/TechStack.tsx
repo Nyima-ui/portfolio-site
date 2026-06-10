@@ -6,16 +6,12 @@ const TechStack = ({ stack }: { stack: string[] }) => {
   const technologies = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
-    const items = gsap.utils.toArray(
-      technologies.current!.querySelectorAll("li"),
-    );
 
     const ctx = gsap.context(() => {
-      gsap.from(items, {
+      gsap.from(technologies.current, {
         y: 20,
         opacity: 0,
         duration: 0.7,
-        stagger: 0.03,
         ease: "cubic-bezier(0.4, 0, 0.2, 1)",
         scrollTrigger: {
           trigger: technologies.current,

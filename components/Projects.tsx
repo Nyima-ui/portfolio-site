@@ -33,7 +33,7 @@ const ProjectCard = ({ p }: { p: ProjectInterface }) => {
     <li ref={cardRef} className="group">
       <Link
         href={p.link}
-        className="flex justify-between mt-11.5 gap-10 max-lg:flex-col"
+        className="flex justify-between mt-11.5 gap-10 max-lg:flex-col max-lg:gap-3"
       >
         <div
           style={{ viewTransitionName: `project-image-${p.id}` }}
@@ -112,7 +112,7 @@ const Projects = () => {
     return () => ctx.revert();
   }, []);
   return (
-    <section className="py-12">
+    <section className="py-12" id="projects">
       <div className="overflow-hidden">
         <h2 className="text-[31px] text-center" ref={headingRef}>
           Things I've Built

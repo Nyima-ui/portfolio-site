@@ -51,7 +51,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative z-10 px-36 max-xl:px-22 max-lg:px-14 max-md:px-8 max-sm:px-5">
+    <section
+      className="relative z-10 px-36 max-xl:px-22 max-lg:px-14 max-md:px-8 max-sm:px-5"
+      id="hero"
+    >
       <div className="mx-auto flex justify-between items-center py-31.5 max-sm:py-12 gap-12 max-sm:flex-col-reverse">
         <div>
           <div className="overflow-hiden">
@@ -71,7 +74,7 @@ const Hero = () => {
 
           <AnimatedLink
             ref={buttonRef}
-            href="#"
+            href="mailto:ntenzin492@gmail.com"
             label="contact"
             className="mt-5 ml-4 max-sm:mx-auto"
           />

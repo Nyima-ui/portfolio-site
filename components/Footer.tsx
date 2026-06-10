@@ -10,7 +10,7 @@ const Footer = () => {
         <ul className="flex justify-between flex-wrap gap-x-10 gap-y-5 max-sm:justify-normal">
           {socials.map((s, i) => (
             <li key={i}>
-              <Link href={s.href} className="flex gap-2 relative group">
+              <Link href={s.href} className="flex gap-2 relative group" target="_blank">
                 <Image width={20} height={20} src={s.icon} alt={s.label} />
                 <span className="text-sm 
                  after:content-[''] after:absolute after:h-px after:w-full after:-bottom-1.5 after:bg-foreground/70 after:left-0

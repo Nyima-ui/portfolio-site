@@ -36,7 +36,7 @@ const ProjectBody = ({
         duration: 0.9,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: links.current,
+          trigger: description.current,
           start: "top 92%",
         },
       });
@@ -46,7 +46,7 @@ const ProjectBody = ({
   }, []);
 
   return (
-    <section className="py-12 max-xl:flex-col">
+    <section className="py-12 max-xl:flex-col max-sm:py-3">
       <div className="flex justify-between gap-2 max-xl:flex-col-reverse max-xl:gap-6">
         <ul className="space-y-3 w-fit" ref={links}>
           <li>
