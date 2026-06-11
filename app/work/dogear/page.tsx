@@ -4,11 +4,16 @@ import ProjectHero from "@/components/ProjectHero";
 import TechStack from "@/components/TechStack";
 import Cta from "@/components/Cta";
 import Footer from "@/components/Footer";
+import { cn } from "@/lib/utils";
 
 const DogearPage = () => {
   return (
     <>
-      <main className="px-36 max-xl:px-22 max-lg:px-14 max-md:px-8 max-sm:px-5">
+      <main
+        className={cn(
+          "px-36 max-xl:px-22 max-lg:px-14 max-md:px-8 max-sm:px-5",
+        )}
+      >
         <ProjectHero
           id="1"
           title="Dogear"

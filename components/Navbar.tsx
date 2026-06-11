@@ -57,7 +57,7 @@ const NavLink = ({
 
 const Navbar = () => {
   return (
-    <header className=" z-30 text-primary-900 sticky top-0 bg-linear-to-b from-primary-100 to-primary-100/40 backdrop-blur-md" id="top-navbar">
+    <header className=" z-30 text-primary-900 sticky top-0 bg-linear-to-b from-primary-100 to-primary-100/40 backdrop-blur-xs" id="top-navbar">
       <nav className="flex justify-between px-10 pt-2 py-4 max-sm:px-5 items-center">
         <Link href={"/"} className="select-none font-cormorant text-xl">
           Ten Nyima

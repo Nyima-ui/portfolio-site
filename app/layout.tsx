@@ -36,12 +36,10 @@ export default function RootLayout({
         className="min-h-full flex flex-col bg-primary-100 
       bg-[radial-gradient(rgba(197,197,195,0.7)_2px,transparent_2px)] bg-size-[40px_40px] text-foreground"
       >
-        <ViewTransitions>
-          <GsapProvider>
-            <Navbar />
-            {children}
-          </GsapProvider>
-        </ViewTransitions>
+        <GsapProvider>
+          <Navbar />
+          {children}
+        </GsapProvider>
       </body>
     </html>
   );

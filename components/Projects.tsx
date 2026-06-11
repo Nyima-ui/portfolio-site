@@ -1,5 +1,5 @@
 "use client";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { projects } from "@/constant";
@@ -36,7 +36,6 @@ const ProjectCard = ({ p }: { p: ProjectInterface }) => {
         className="flex justify-between mt-11.5 gap-10 max-lg:flex-col max-lg:gap-3"
       >
         <div
-          style={{ viewTransitionName: `project-image-${p.id}` }}
           className="bg-linear-to-b from-primary-200 to-primary-100 rounded-xl relative
              after:content-[''] after:absolute after:inset-0 
              after:z-10 after:opacity-0 after:bg-linear-to-b after:from-primary-100/0 after:to-primary-100/30
@@ -53,12 +52,7 @@ const ProjectCard = ({ p }: { p: ProjectInterface }) => {
 
         <div className="flex flex-col justify-between max-w-70 max-h-92.5 pt-5 max-lg:max-w-none">
           <div>
-            <h3
-              className="text-[25px]"
-              style={{ viewTransitionName: `project-title-${p.id}` }}
-            >
-              {p.heading}
-            </h3>
+            <h3 className="text-[25px]">{p.heading}</h3>
             <p className="mt-3">{p.paragraph}</p>
           </div>
 
