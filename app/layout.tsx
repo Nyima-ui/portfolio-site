@@ -19,7 +19,14 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "Nyima | Full stack developer and UI designer",
   description:
-    "Portfolio of Nyima, a full-stack developer and designer building products from Figma to deployment. Projects include Dogear, RentLocals, DeepLock, and Lineup.",
+    "Full-stack developer & UI designer building products from Figma to deployment. See projects: Dogear, RentLocals, DeepLock, Lineup.",
+  openGraph: {
+    siteName: "Nyima",
+    title: "Nyima — Full-Stack Developer & Designer",
+    description:
+      "Full-stack developer and UI designer. I build products end-to-end, from Figma to deployment.",
+    images: ["/opengraph-image.png"],
+  },
 };
 
 export default function RootLayout({
