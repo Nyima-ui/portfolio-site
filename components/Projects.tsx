@@ -32,6 +32,7 @@ const ProjectCard = ({ p }: { p: ProjectInterface }) => {
   return (
     <li ref={cardRef} className="group">
       <Link
+        scroll={true}
         href={p.link}
         className="flex justify-between mt-11.5 gap-10 max-lg:flex-col max-lg:gap-3"
       >

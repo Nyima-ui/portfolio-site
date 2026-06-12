@@ -14,40 +14,37 @@ const Hero = () => {
 
   useEffect(() => {
     if (hasAnimated) {
-      gsap.set(
-        [
-          headingRef.current,
-          paraRef.current,
-          buttonRef.current,
-          imageRef.current,
-        ],
-        {
-          clearProps: "true",
-        },
-      );
-
+      gsap.set(headingRef.current, { y: 0, opacity: 1 });
+      gsap.set(paraRef.current, { y: 0 });
+      gsap.set(buttonRef.current, { y: 0, opacity: 1 });
+      gsap.set(imageRef.current, { clipPath: "inset(0 0 0% 0" });
       return;
     }
 
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        defaults: { ease: "power3.out", duration: 0.9 },
-        onComplete: () => {
-          hasAnimated = true;
-        },
+    const runAnimation = () => {
+      const ctx = gsap.context(() => {
+        const tl = gsap.timeline({
+          defaults: { ease: "power3.out", duration: 0.9 },
+          onComplete: () => {
+            hasAnimated = true;
+          },
+        });
+
+        tl.to(headingRef.current, { y: 0, opacity: 1, duration: 0.8 })
+          .to(paraRef.current, { y: 0, duration: 0.5 }, "-=0.4")
+          .to(buttonRef.current, { opacity: 1, y: 0, duration: 0.4 }, "-=0.35")
+          .to(
+            imageRef.current,
+            { clipPath: "inset(0 0 0% 0)", duration: 0.5 },
+            "-=0.8",
+          );
       });
 
-      tl.from(headingRef.current, { y: "100%", opacity: 0, duration: 1.2 })
-        .from(paraRef.current, { y: "100%", duration: 0.8 }, "-=0.6")
-        .from(buttonRef.current, { opacity: 0, y: 10, duration: 0.6 }, "-=0.6")
-        .from(
-          imageRef.current,
-          { clipPath: "inset(0 0 100% 0)", duration: 0.7 },
-          "-=1.2",
-        );
-    });
+      return ctx;
+    };
 
-    return () => ctx.revert();
+    window.addEventListener("introComplete", runAnimation);
+    return () => window.removeEventListener("introComplete", runAnimation);
   }, []);
 
   return (
@@ -59,14 +56,14 @@ const Hero = () => {
         <div>
           <div className="overflow-hiden">
             <h1
-              className="font-cormorant font-semibold leading-tight text-[clamp(2.4rem,7vw,6.75rem)] whitespace-nowrap max-sm:text-[52px] max-sm:text-center"
+              className="font-cormorant font-semibold leading-tight text-[clamp(2.4rem,7vw,6.75rem)] whitespace-nowrap max-sm:text-[52px] max-sm:text-center translate-y-full opacity-0"
               ref={headingRef}
             >
               Tenzin Nyima
             </h1>
           </div>
           <div className="overflow-hidden ml-4 mt-4 max-md:ml-2.5">
-            <p className="max-sm:text-center" ref={paraRef}>
+            <p className="max-sm:text-center translate-y-full" ref={paraRef}>
               From idea to deployment. <br />
               I'm a full-stack developer who takes products end-to-end.
             </p>
@@ -76,11 +73,14 @@ const Hero = () => {
             ref={buttonRef}
             href="mailto:ntenzin492@gmail.com"
             label="contact"
-            className="mt-5 ml-4 max-sm:mx-auto"
+            className="mt-5 ml-4 max-sm:mx-auto opacity-0 translate-y-2.5"
           />
         </div>
 
-        <div className="overflow-hidden" ref={imageRef}>
+        <div
+          className="overflow-hidden [clip-path:inset(0_0_100%_0)]"
+          ref={imageRef}
+        >
           <div>
             <Image
               height={380}
