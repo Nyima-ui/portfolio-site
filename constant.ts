@@ -55,7 +55,7 @@ export const socials: { icon: string; label: string; href: string }[] = [
     href: "https://github.com/Nyima-ui",
   },
   {
-    icon: "/socials/linkedin.svg",
+    icon: "/socials/linkedIn.svg",
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/tenzin-nyima-897761365/",
   },
