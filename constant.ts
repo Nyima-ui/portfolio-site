@@ -23,7 +23,7 @@ export const projects: ProjectInterface[] = [
     paragraph:
       "Lock yourself out of your phone. Get back in only when you're ready.",
     stack: ["Next.js", "Timelock Encryption", "shadcn/ui"],
-    link: "#",
+    link: "/work/deeplock",
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ export const projects: ProjectInterface[] = [
     heading: "Lineup",
     paragraph: "Jot down notes and tasks, at the speed of thought.",
     stack: ["Next.js", "Local Storage", "Monaco Editor"],
-    link: "#",
+    link: "/work/lineup",
   },
 ];
 
