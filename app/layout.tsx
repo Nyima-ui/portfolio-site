@@ -3,7 +3,6 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import GsapProvider from "@/components/GsapProvider";
 import Navbar from "@/components/Navbar";
-import { ViewTransitions } from "next-view-transitions";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
