@@ -15,7 +15,6 @@ const GsapProvider = ({ children }: { children: React.ReactNode }) => {
     const lenis = new Lenis({
       lerp: 0.09,
       wheelMultiplier: 1.1,
-      syncTouch: true,
     });
 
     lenisRef.current = lenis;
@@ -26,7 +25,16 @@ const GsapProvider = ({ children }: { children: React.ReactNode }) => {
 
     gsap.ticker.add(update);
 
+    lenis.on("scroll", ScrollTrigger.update);
+
+    const resizeObserver = new ResizeObserver(() => {
+      lenis.resize();
+      ScrollTrigger.refresh();
+    });
+    resizeObserver.observe(document.body);
+
     return () => {
+      resizeObserver.disconnect();
       gsap.ticker.remove(update);
       lenis.destroy();
     };
@@ -34,7 +42,6 @@ const GsapProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     requestAnimationFrame(() => {
-      lenisRef.current?.resize();
       lenisRef.current?.scrollTo(0, { immediate: true, force: true });
     });
   }, [pathname]);

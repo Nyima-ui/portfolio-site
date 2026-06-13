@@ -35,11 +35,11 @@ const IntroOverlay = () => {
   return (
     <div className="fixed inset-0 z-100 bg-primary-100" ref={overlayRef}>
       <div className="w-0 h-1 bg-foreground" ref={lineRef}></div>
-      <Sun
-        className="text-foreground absolute bottom-5 right-5 animate-spin"
-        strokeWidth={1}
-        size={20}
-      />
+      <div className="flex items-center gap-2 tracking-wide absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <span>Tenzin</span>
+        <Sun className="animate-spin" strokeWidth={1} size={20} />
+        <span>Nyima</span>
+      </div>
     </div>
   );
 };
