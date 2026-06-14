@@ -21,13 +21,13 @@ const TransitionProvider = ({ children }: { children: React.ReactNode }) => {
       return;
     }
 
-    gsap.set(overlayRef.current, { opacity: 1, pointerEvents: "all" });
-
+    gsap.set(overlayRef.current, { y: "0%" });
     gsap.to(overlayRef.current, {
-      opacity: 0,
-      duration: 0.5,
+      y: "-100%",
+      duration: 0.6,
       ease: "power2.inOut",
       onComplete: () => {
+        gsap.set(overlayRef.current, { y: "100%" });
         if (overlayRef.current) overlayRef.current.style.pointerEvents = "none";
       },
     });
@@ -42,38 +42,24 @@ const TransitionProvider = ({ children }: { children: React.ReactNode }) => {
 
     overlay.style.pointerEvents = "all";
 
-    gsap.to(overlay, {
-      opacity: 1,
-      duration: 0.3,
-      ease: "power2.in",
-      onComplete: () => router.push(href),
-    });
+    gsap.fromTo(
+      overlay,
+      { y: "100%" },
+      {
+        y: "0%",
+        duration: 0.6,
+        ease: "power2.inOut",
+        onComplete: () => router.push(href),
+      },
+    );
   };
-
-  useEffect(() => {
-    const handleIntroComplete = () => {
-      gsap.to(overlayRef.current, {
-        opacity: 0,
-        duration: 0.01,
-        onComplete: () => {
-          if (overlayRef.current)
-            overlayRef.current.style.pointerEvents = "none";
-        },
-      });
-    };
-
-    window.addEventListener("introComplete", handleIntroComplete);
-
-    return () =>
-      window.removeEventListener("introComplete", handleIntroComplete);
-  }, []);
 
   return (
     <TransitionContext.Provider value={{ navigate }}>
       {children}
       <div
         ref={overlayRef}
-        className="fixed inset-0 z-90 bg-primary-100 pointer-events-none opacity-100"
+        className="fixed inset-0 z-90 bg-primary-100 pointer-events-none translate-y-full"
         aria-hidden="true"
       />
     </TransitionContext.Provider>
@@ -86,6 +72,5 @@ export function usePageTransition() {
   const ctx = useContext(TransitionContext);
   if (!ctx)
     throw new Error("usePageTransition must be used within TransitionProvider");
-
   return ctx;
 }
