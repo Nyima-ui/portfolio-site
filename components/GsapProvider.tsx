@@ -42,22 +42,25 @@ const GsapProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     requestAnimationFrame(() => {
-      const hash = window.location.hash;
+      const params = new URLSearchParams(window.location.search);
+      const scrollTarget = params.get("scrollTo");
 
-      if (hash) {
-        const target = document.querySelector(hash);
+      if (scrollTarget) {
+        const target = document.getElementById(scrollTarget);
         if (target) {
           lenisRef.current?.scrollTo(target as HTMLElement, {
             immediate: true,
             force: true,
           });
-          return;
+
+          window.history.replaceState(null, "", pathname);
         }
       }
 
       lenisRef.current?.scrollTo(0, { immediate: true, force: true });
     });
   }, [pathname]);
+
   return <>{children}</>;
 };
 

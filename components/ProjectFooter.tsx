@@ -17,7 +17,7 @@ const ProjectFooter = () => {
   return (
     <section className="pt-16 pb-12 text-sm flex justify-between">
       <Link
-        href={"/#projects"}
+        href={"/?scrollTo=projects"}
         className="flex gap-1 px-3 py-1.5 rounded-full border border-primary-200 w-fit hover:bg-primary-200 text-primary-900 transition-colors duration-500 ease-out"
       >
         <Image width={16} height={16} alt="Sun icon" src={"/small-sun.svg"} />
