@@ -33,7 +33,7 @@ const IntroOverlay = () => {
 
   if (!show) return null;
   return (
-    <div className="fixed inset-0 z-100 bg-primary-100" ref={overlayRef}>
+    <div className="fixed inset-0 z-100 bg-primary-200" ref={overlayRef}>
       <div className="w-0 h-1 bg-foreground" ref={lineRef}></div>
       <div className="flex items-center gap-2 tracking-wide absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <span>Tenzin</span>

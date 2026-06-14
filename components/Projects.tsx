@@ -6,6 +6,8 @@ import { projects } from "@/constant";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 
+import TransitionLink from "./TransitionLink";
+
 const ProjectCard = ({ p }: { p: ProjectInterface }) => {
   const cardRef = useRef<HTMLLIElement>(null);
 
@@ -31,16 +33,15 @@ const ProjectCard = ({ p }: { p: ProjectInterface }) => {
 
   return (
     <li ref={cardRef} className="group">
-      <Link
-        scroll={true}
+      <TransitionLink
         href={p.link}
         className="flex justify-between mt-11.5 gap-10 max-lg:flex-col max-lg:gap-3"
       >
         <div
           className="bg-linear-to-b from-primary-200 to-primary-100 rounded-xl relative
-             after:content-[''] after:absolute after:inset-0 
-             after:z-10 after:opacity-0 after:bg-linear-to-b after:from-primary-100/0 after:to-primary-100/30
-             group-hover:after:opacity-100 after:transition-opacity after:duration-400 after:ease-out"
+          after:content-[''] after:absolute after:inset-0 
+          after:z-10 after:opacity-0 after:bg-linear-to-b after:from-primary-100/0 after:to-primary-100/30
+          group-hover:after:opacity-100 after:transition-opacity after:duration-400 after:ease-out"
         >
           <Image
             width={697}
@@ -81,7 +82,7 @@ const ProjectCard = ({ p }: { p: ProjectInterface }) => {
             </button>
           </div>
         </div>
-      </Link>
+      </TransitionLink>
     </li>
   );
 };

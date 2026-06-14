@@ -4,6 +4,7 @@ import "./globals.css";
 import GsapProvider from "@/components/GsapProvider";
 import Navbar from "@/components/Navbar";
 import IntroOverlay from "@/components/IntroOverlay";
+import TransitionProvider from "@/components/TransitionProvider";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -45,9 +46,11 @@ export default function RootLayout({
       bg-[radial-gradient(rgba(197,197,195,0.7)_2px,transparent_2px)] bg-size-[40px_40px] text-foreground"
       >
         <GsapProvider>
-          <Navbar />
-          <IntroOverlay />
-          {children}
+          <TransitionProvider>
+            <Navbar />
+            <IntroOverlay />
+            {children}
+          </TransitionProvider>
         </GsapProvider>
       </body>
     </html>
